@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jul 2024 pada 03.00
+-- Waktu pembuatan: 08 Jul 2024 pada 20.18
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -47,6 +47,31 @@ INSERT INTO `pengaturan` (`id_pengaturan`, `appname`, `logo`, `copyright`, `desc
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `slide`
+--
+
+CREATE TABLE `slide` (
+  `id_slide` int(11) NOT NULL,
+  `judul` varchar(128) NOT NULL,
+  `deskripsi` varchar(128) NOT NULL,
+  `tombol` varchar(20) NOT NULL,
+  `link` varchar(128) NOT NULL,
+  `urutan` int(11) NOT NULL,
+  `gambar` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `slide`
+--
+
+INSERT INTO `slide` (`id_slide`, `judul`, `deskripsi`, `tombol`, `link`, `urutan`, `gambar`) VALUES
+(2, 'PMB', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'REGISTER', 'https://pmb.unitama.ac.id/', 2, '1720461169.jpg'),
+(3, 'SIAKAD', 'The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', 'LOGIN', 'https://siakad.akba.ac.id/', 1, '1720461218.jpg'),
+(4, 'E-MACCA', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'VISIT', 'https://e-macca.akba.ac.id/', 3, '1720461261.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -78,6 +103,12 @@ ALTER TABLE `pengaturan`
   ADD PRIMARY KEY (`id_pengaturan`);
 
 --
+-- Indeks untuk tabel `slide`
+--
+ALTER TABLE `slide`
+  ADD PRIMARY KEY (`id_slide`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -92,6 +123,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `pengaturan`
   MODIFY `id_pengaturan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `slide`
+--
+ALTER TABLE `slide`
+  MODIFY `id_slide` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

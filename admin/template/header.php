@@ -164,6 +164,13 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?= $base_url; ?>admin/slide">
+                    <i class='bx bx-image-alt'></i>
+                    <span>Slide</span>
+                </a>
+            </li>
+
         </ul>
 
     </aside><!-- End Sidebar-->
