@@ -171,6 +171,13 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?= $base_url; ?>admin/prodi">
+                    <i class='bx bx-buildings'></i>
+                    <span>Prodi</span>
+                </a>
+            </li>
+
         </ul>
 
     </aside><!-- End Sidebar-->

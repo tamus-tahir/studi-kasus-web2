@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jul 2024 pada 20.18
+-- Waktu pembuatan: 08 Jul 2024 pada 21.00
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -47,6 +47,27 @@ INSERT INTO `pengaturan` (`id_pengaturan`, `appname`, `logo`, `copyright`, `desc
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `prodi`
+--
+
+CREATE TABLE `prodi` (
+  `id_prodi` int(11) NOT NULL,
+  `prodi` varchar(20) NOT NULL,
+  `deskripsi` varchar(128) NOT NULL,
+  `icon` varchar(20) NOT NULL,
+  `urutan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `prodi`
+--
+
+INSERT INTO `prodi` (`id_prodi`, `prodi`, `deskripsi`, `icon`, `urutan`) VALUES
+(1, 'Sistem Informasi', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'bx bxl-meta', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `slide`
 --
 
@@ -65,7 +86,7 @@ CREATE TABLE `slide` (
 --
 
 INSERT INTO `slide` (`id_slide`, `judul`, `deskripsi`, `tombol`, `link`, `urutan`, `gambar`) VALUES
-(2, 'PMB', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'REGISTER', 'https://pmb.unitama.ac.id/', 2, '1720461169.jpg'),
+(2, 'PMB ', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'REGISTER', 'https://pmb.unitama.ac.id/', 2, '1720463706.jpg'),
 (3, 'SIAKAD', 'The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', 'LOGIN', 'https://siakad.akba.ac.id/', 1, '1720461218.jpg'),
 (4, 'E-MACCA', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'VISIT', 'https://e-macca.akba.ac.id/', 3, '1720461261.jpg');
 
@@ -103,6 +124,12 @@ ALTER TABLE `pengaturan`
   ADD PRIMARY KEY (`id_pengaturan`);
 
 --
+-- Indeks untuk tabel `prodi`
+--
+ALTER TABLE `prodi`
+  ADD PRIMARY KEY (`id_prodi`);
+
+--
 -- Indeks untuk tabel `slide`
 --
 ALTER TABLE `slide`
@@ -123,6 +150,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `pengaturan`
   MODIFY `id_pengaturan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `prodi`
+--
+ALTER TABLE `prodi`
+  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `slide`

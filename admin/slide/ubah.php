@@ -1,6 +1,10 @@
 <?php require '../template/header.php' ?>
 <?php
 
+$id = $_GET['id'];
+
+$slide = getWhere("SELECT * FROM slide WHERE id_slide = $id ");
+
 if (isset($_POST['submit'])) {
     $judul = $_POST['judul'];
     $deskripsi = $_POST['deskripsi'];
@@ -9,29 +13,36 @@ if (isset($_POST['submit'])) {
     $urutan = $_POST['urutan'];
 
     if ($_FILES['gambar']['error'] == 4) {
-        $_SESSION['gagal'] = 'Data Gagal Ditambahkan, gambar wajib diupload';
-        redirectTo('admin/slide/tambah.php');
+        $gambar = $slide['gambar'];
     } else {
         $gambar = upload('gambar', ['jpg', 'png', 'jpeg'], 500, '../../assets/uploads/slide/');
     }
 
-    $query = "INSERT INTO slide VALUES (null, '$judul', '$deskripsi','$tombol', '$link', '$urutan', '$gambar')";
+    $query = "UPDATE slide SET
+            judul       = '$judul',
+            deskripsi    = '$deskripsi',
+            tombol    = '$tombol',
+            link    = '$link',
+            urutan    = '$urutan',
+            gambar    = '$gambar'
+            WHERE id_slide = $id
+    ";
 
     mysqli_query($koneksi, $query);
 
     if (mysqli_affected_rows($koneksi) > 0) {
-        $_SESSION['berhasil'] = 'Data Berhasil Ditambahkan';
+        $_SESSION['berhasil'] = 'Data Berhasil diubah';
         redirectTo('admin/slide');
     } else {
-        $_SESSION['gagal'] = 'Data Gagal Ditambahkan';
-        redirectTo('admin/slide/tambah.php');
+        $_SESSION['gagal'] = 'Data Gagal diubah';
+        redirectTo('admin/slide/ubah.php?id=' . $id);
     }
 }
 
 ?>
 
 <div class="card shadow p-3">
-    <h5>Halaman Tambah Slide</h5>
+    <h5>Halaman Ubah Slide</h5>
 </div>
 
 <div class="card shadow p-3">
@@ -45,33 +56,33 @@ if (isset($_POST['submit'])) {
                     <label for="gambar" class="form-label">Gambar <span class="text-danger">*</span></label>
                     <input class="form-control" type="file" id="upload" name="gambar">
                 </div>
-                <img src="<?= $base_url; ?>assets/img/noimage.jpg" alt="" id="preview" class="rounded w-100 ">
+                <img src="<?= $base_url; ?>/assets/uploads/slide/<?= $slide['gambar']; ?>" alt="" id="preview" class="rounded w-100 ">
             </div>
 
             <div class="col-md-8">
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="judul" name="judul" required>
+                    <input type="text" class="form-control" id="judul" name="judul" required value="<?= $slide['judul']; ?>">
                 </div>
 
                 <div class="mb-3">
                     <label for="deskripsi" class="form-label">Deskripsi <span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="deskripsi" name="deskripsi" required></textarea>
+                    <textarea class="form-control" id="deskripsi" name="deskripsi" required><?= $slide['deskripsi']; ?></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="tombol" class="form-label">Tombol <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="tombol" name="tombol" required>
+                    <input type="text" class="form-control" id="tombol" name="tombol" required value="<?= $slide['tombol']; ?>">
                 </div>
 
                 <div class="mb-3">
                     <label for="link" class="form-label">Link <span class="text-danger">*</span></label>
-                    <input type="url" class="form-control" id="link" name="link" required>
+                    <input type="url" class="form-control" id="link" name="link" required value="<?= $slide['link']; ?>">
                 </div>
 
                 <div class="mb-3">
                     <label for="urutan" class="form-label">Urutan <span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" id="urutan" name="urutan" required>
+                    <input type="number" class="form-control" id="urutan" name="urutan" required value="<?= $slide['urutan']; ?>">
                 </div>
 
             </div>
