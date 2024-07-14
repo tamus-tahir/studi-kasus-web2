@@ -65,7 +65,6 @@
 
             <div class="container position-relative d-flex align-items-center justify-content-between">
                 <a href="<?= $base_url; ?>" class="logo d-flex align-items-center">
-                    <!-- Uncomment the line below if you also wish to use an image logo -->
                     <img src="<?= $base_url; ?>assets/img/<?= $pengaturan['logo']; ?>" alt="">
                     <h1 class="sitename"><?= $pengaturan['appname']; ?><br></h1>
                 </a>
