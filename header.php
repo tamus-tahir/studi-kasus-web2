@@ -28,6 +28,7 @@
     <link href="<?= $base_url; ?>front/plugins/aos/aos.css" rel="stylesheet">
     <link href="<?= $base_url; ?>front/plugins/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="<?= $base_url; ?>front/plugins/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="<?= $base_url; ?>assets/plugins/boxicons/css/boxicons.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
     <link href="<?= $base_url; ?>front/css/main.css" rel="stylesheet">
@@ -72,14 +73,18 @@
                 <nav id="navmenu" class="navmenu">
                     <ul>
                         <li><a href="<?= $base_url; ?>">Beranda</a></li>
-                        <li><a href="<?= $base_url; ?>tentang.php">Tentang</a></li>
-                        <li><a href="<?= $base_url; ?>berita.php">Berita</a></li>
-                        <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                             <ul>
-                                <li><a href="#">Dropdown 1</a></li>
-                                <li><a href="#">Dropdown 2</a></li>
-                                <li><a href="#">Dropdown 3</a></li>
-                                <li><a href="#">Dropdown 4</a></li>
+                                <li><a href="<?= $base_url; ?>tentang.php">Tentang Kami</a></li>
+                                <li><a href="<?= $base_url; ?>visimisi.php">Visi Dan Misi</a></li>
+                                <li><a href="<?= $base_url; ?>struktur.php">Struktu Organisasi</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="<?= $base_url; ?>berita.php">Berita</a></li>
+                        <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="<?= $base_url; ?>foto.php">Foto</a></li>
+                                <li><a href="<?= $base_url; ?>video.php">Video</a></li>
                             </ul>
                         </li>
                         <li><a href="<?= $base_url; ?>kontak.php">Kontak</a></li>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jul 2024 pada 21.00
+-- Waktu pembuatan: 14 Jul 2024 pada 22.28
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -63,7 +63,11 @@ CREATE TABLE `prodi` (
 --
 
 INSERT INTO `prodi` (`id_prodi`, `prodi`, `deskripsi`, `icon`, `urutan`) VALUES
-(1, 'Sistem Informasi', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'bx bxl-meta', 1);
+(1, 'Sistem Informasi', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'bx bxl-meta', 2),
+(2, 'Teknik Informatika', 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s', 'bx bxl-flutter', 1),
+(3, 'Pendidikan Teknologi', 'when an unknown printer took a galley of type and scrambled it to make a type specimen book', 'bx bxl-imdb', 3),
+(4, 'Teknologi Informasi', 'It has survived not only five centuries', 'bx bxl-steam', 4),
+(5, 'Bisnis Digital', 'But also the leap into electronic typesetting, remaining essentially unchanged', 'bx bxl-audible', 5);
 
 -- --------------------------------------------------------
 
@@ -155,7 +159,7 @@ ALTER TABLE `pengaturan`
 -- AUTO_INCREMENT untuk tabel `prodi`
 --
 ALTER TABLE `prodi`
-  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `slide`
