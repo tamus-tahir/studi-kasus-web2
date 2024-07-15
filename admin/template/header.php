@@ -178,6 +178,13 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?= $base_url; ?>admin/profil">
+                    <i class='bx bx-id-card'></i>
+                    <span>Profil</span>
+                </a>
+            </li>
+
         </ul>
 
     </aside><!-- End Sidebar-->

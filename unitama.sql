@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jul 2024 pada 22.28
+-- Waktu pembuatan: 15 Jul 2024 pada 20.28
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -72,6 +72,26 @@ INSERT INTO `prodi` (`id_prodi`, `prodi`, `deskripsi`, `icon`, `urutan`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `profil`
+--
+
+CREATE TABLE `profil` (
+  `id_profil` int(11) NOT NULL,
+  `tentang` text NOT NULL,
+  `visimisi` text NOT NULL,
+  `struktur` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `profil`
+--
+
+INSERT INTO `profil` (`id_profil`, `tentang`, `visimisi`, `struktur`) VALUES
+(1, '<p style=\"text-align: justify;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>\r\n<p style=\"text-align: justify;\">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>', '<p style=\"text-align: justify;\"><strong><span style=\"font-size: 18pt;\">VISI</span></strong></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt;\">Contrary to popular belief, Lorem Ipsum is not simply random text</span></p>\r\n<p style=\"text-align: justify;\">&nbsp;</p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 18pt;\"><strong>MISI</strong></span></p>\r\n<ol>\r\n<li style=\"text-align: justify;\"><span style=\"font-size: 12pt;\">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. </span></li>\r\n<li style=\"text-align: justify;\"><span style=\"font-size: 12pt;\">If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. </span></li>\r\n<li style=\"text-align: justify;\"><span style=\"font-size: 12pt;\">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. </span></li>\r\n<li style=\"text-align: justify;\"><span style=\"font-size: 12pt;\">It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. </span></li>\r\n<li style=\"text-align: justify;\"><span style=\"font-size: 12pt;\">The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</span></li>\r\n</ol>', '1721066015.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `slide`
 --
 
@@ -134,6 +154,12 @@ ALTER TABLE `prodi`
   ADD PRIMARY KEY (`id_prodi`);
 
 --
+-- Indeks untuk tabel `profil`
+--
+ALTER TABLE `profil`
+  ADD PRIMARY KEY (`id_profil`);
+
+--
 -- Indeks untuk tabel `slide`
 --
 ALTER TABLE `slide`
@@ -160,6 +186,12 @@ ALTER TABLE `pengaturan`
 --
 ALTER TABLE `prodi`
   MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `profil`
+--
+ALTER TABLE `profil`
+  MODIFY `id_profil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `slide`

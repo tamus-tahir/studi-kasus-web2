@@ -76,7 +76,7 @@
                             <ul>
                                 <li><a href="<?= $base_url; ?>tentang.php">Tentang Kami</a></li>
                                 <li><a href="<?= $base_url; ?>visimisi.php">Visi Dan Misi</a></li>
-                                <li><a href="<?= $base_url; ?>struktur.php">Struktu Organisasi</a></li>
+                                <li><a href="<?= $base_url; ?>struktur.php">Struktur Organisasi</a></li>
                             </ul>
                         </li>
                         <li><a href="<?= $base_url; ?>berita.php">Berita</a></li>
